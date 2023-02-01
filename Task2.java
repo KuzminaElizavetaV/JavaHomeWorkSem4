@@ -11,7 +11,9 @@ import java.util.LinkedList;
         LinkedList<Object> objectLinkedList = new LinkedList<>(Arrays.asList(1, 2, "три", "четыре", 5, 6, 7, "восемь"));
         System.out.println("Первоначальная очередь выглядит так: " + objectLinkedList);
         enqueue(objectLinkedList, 9);
+        enqueue(objectLinkedList, "десять");
         dequeue(objectLinkedList);
+        System.out.println("Очередь после удаления: " + objectLinkedList);
         first(objectLinkedList);
     }
     private static void enqueue(LinkedList<Object> linkedList, Object element) { //помещает элемент в конец очереди
@@ -20,15 +22,12 @@ import java.util.LinkedList;
     }
     private static void dequeue(LinkedList<Object> linkedList) { //возвращает первый элемент из очереди и удаляет его
         if (!linkedList.isEmpty()) {
-            System.out.println("Первый элемент \"" + linkedList.get(0) + "\" удаляется из очереди: " + linkedList);
+            System.out.println("Удален первый элемент \"" + linkedList.getFirst() + "\"  из очереди.");
             linkedList.removeFirst();
-            System.out.println("Очередь после удаления: " + linkedList);
         }
     }
     private static void first(LinkedList<Object> linkedList) { //возвращает первый элемент из очереди, не удаляя
-        if (!linkedList.isEmpty()) {
-            System.out.println("Первый элемент очереди " + linkedList + " - это \"" + linkedList.get(0)+"\"");
-        }
+        if (!linkedList.isEmpty()) System.out.println("Первый элемент очереди: "+ (linkedList.getFirst()));
     }
 }
 
