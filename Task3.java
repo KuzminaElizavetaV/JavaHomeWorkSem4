@@ -53,8 +53,8 @@ public class Task3 {
                         if(numberDivisor!=0) {
                             result = stackCalculations.removeLast() / numberDivisor;
                             stackCalculations.addLast(result);
-                        } else System.out.println("Деление на \"0\" !!!"); //как правильно обработать ошибку деления
-                        break;                                         // на 0 ??? я с Exception пока никак не дружу (((
+                        } else throw new IllegalStateException ("Деление на \"0\" !!!"); //обработка ошибки
+                        break;
                     default:
                         break;
                 }
